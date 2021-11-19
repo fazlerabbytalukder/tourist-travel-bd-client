@@ -78,7 +78,7 @@ const Banner = () => {
                                             Our Location
                                         </Typography>
                                         <Typography variant='h6' sx={{ fontSize: 13, color: 'white', fontWeight: 300, textAlign: 'left' }}>
-                                            Sukrabad, Dhanmondi 32, Dhaka
+                                            Sukrabad, Dhanmondi 32 <br /> Dhaka, Bangladesh
                                         </Typography>
                                     </Box>
                                 </Box>
