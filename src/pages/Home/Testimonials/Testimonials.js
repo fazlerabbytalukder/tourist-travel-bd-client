@@ -11,7 +11,7 @@ import ceo from '../../../images/dp.jpg';
 
 const Testimonials = () => {
     return (
-        <Container sx={{ flexGrow: 1 }}>
+        <Container sx={{ flexGrow: 1, mt:6 }}>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <Typography style={{ textAlign: 'center', color: 'black' }} variant="h5" gutterBottom component="div">
