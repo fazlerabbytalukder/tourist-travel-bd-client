@@ -58,10 +58,10 @@ const Login = () => {
                             onChange={handleOnChange}
                             type="password"
                             size="small" />
-                        <Button variant="contained" sx={{ width: "75%", m: 1 }} type="submit">Login</Button> <br />
-                        <Button sx={{my:2}} variant="text">--------------------- OR ---------------------</Button> <br />
-                        <Button onClick={handleGoogleSignIn} sx={{ width: "75%", m: 1 }} variant="outlined"><img src={googleLogo} alt="" style={{width:'25px'}}/>  Sign In With Google</Button> <br />
-                        <NavLink style={{ textDecoration: 'none' }} to='/register'><Button sx={{my:2}} variant="text">New User? Please Register</Button></NavLink>
+                        <Button variant="contained" sx={{ width: "75%", m: 1, backgroundColor:'#CC2060' }} type="submit">Login</Button> <br />
+                        <Button sx={{my:2, color:'#CC2060'}} variant="text">--------------------- OR ---------------------</Button> <br />
+                        <Button onClick={handleGoogleSignIn} sx={{ width: "75%", m: 1, borderColor:'#CC2060',color:'#CC2060' }} variant="outlined"><img src={googleLogo} alt="" style={{width:'25px', color:'#CC2060'}}/>  Sign In With Google</Button> <br />
+                        <NavLink style={{ textDecoration: 'none' }} to='/register'><Button sx={{my:2, color:'#CC2060'}} variant="text">New User? Please Register</Button></NavLink>
                     </form>
                     {isLoading && <CircularProgress />}
                     {user?.email && <Alert severity="success">User Created Successfully!</Alert>}
