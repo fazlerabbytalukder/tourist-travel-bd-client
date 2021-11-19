@@ -1,6 +1,6 @@
 import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import googleLogo from '../../../images/google logo.png';
 import logo from '../../../images/logo.png';
@@ -8,7 +8,7 @@ import logo from '../../../images/logo.png';
 const Register = () => {
     const [loginData, SetLoginData] = useState({})
 
-    const history = useHistory();
+    const navigate = useNavigate();
     const location = useLocation();
 
     const { user, registerUser, isLoading, authError, signInWithGoogle } = useAuth();
@@ -30,14 +30,14 @@ const Register = () => {
             alert('your pass did not match');
             return;
         }
-        registerUser(loginData.email, loginData.password, loginData.name, history);
+        registerUser(loginData.email, loginData.password, loginData.name, navigate);
         // alert('hello')
         e.preventDefault();
     }
 
     //google sign in
     const handleGoogleSignIn = () => {
-        signInWithGoogle(location,history)
+        signInWithGoogle(location,navigate)
     }
 
     return (

@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
-import { BrowserRouter,Switch,Route } from 'react-router-dom';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Home from './pages/Home/Home/Home';
 import PrivateRoute from './pages/Login/Login/PrivateRoute/PrivateRoute';
 import Services from './pages/Home/Services/Services';
@@ -13,23 +13,23 @@ function App() {
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
-          <Switch>
-            <Route exact path='/'>
-              <Home></Home>
+          <Routes>
+            <Route exact path='/' element={<Home></Home>}>
+              
             </Route>
-            <Route path='/home'>
-              <Home></Home>
+            <Route path='/home' element={<Home></Home>}>
+              
             </Route>
-            <PrivateRoute path='/services'>
-              <Services></Services>
-            </PrivateRoute>
-            <Route path='/login'>
-              <Login></Login>
+            <Route path='/services' element={<PrivateRoute><Services></Services></PrivateRoute>}>
+              
             </Route>
-            <Route path='/register'>
-              <Register></Register>
+            <Route path='/login' element={<Login></Login>}>
+              
             </Route>
-          </Switch>
+            <Route path='/register' element={<Register></Register>}>
+              
+            </Route>
+          </Routes>
         </BrowserRouter>
       </AuthProvider>
     </div>
