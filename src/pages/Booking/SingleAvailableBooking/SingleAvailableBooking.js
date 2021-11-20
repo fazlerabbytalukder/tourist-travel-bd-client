@@ -3,11 +3,16 @@ import React from 'react';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import { Box } from '@mui/system';
+import BookingModal from '../BookingModal/BookingModal';
 
-const SingleAvailableBooking = ({ service }) => {
+const SingleAvailableBooking = ({ service, date }) => {
     const { serviceName, img, price, firstTrip, lastTrip, tripNumber, star } = service;
+    const [openBooking, setBookingOpen] = React.useState(false);
+    const handleBookingOpen = () => setBookingOpen(true);
+    const handleBookingClose = () => setBookingOpen(false);
     return (
-        <Grid item xs={12} sm={12} md={4}>
+        <>
+            <Grid item xs={12} sm={12} md={4}>
             <Card sx={{ minWidth: 275, border: 0, boxShadow: 2 }}>
                 <CardMedia
                     style={{ width: '90px', height: '90px', borderRadius: '50%', margin: '0 auto', marginTop: '10px' }}
@@ -36,9 +41,16 @@ const SingleAvailableBooking = ({ service }) => {
                         <b>Last Trip:</b> {lastTrip}
                     </Typography>
                 </CardContent>
-                <Button style={{ width: '90%', backgroundColor: '#CC2060', marginBottom: '20px' }} variant="contained">Book Now</Button>
+                <Button onClick={handleBookingOpen} style={{ width: '90%', backgroundColor: '#CC2060', marginBottom: '20px' }} variant="contained">Book Now</Button>
             </Card>
-        </Grid>
+            </Grid>
+            <BookingModal
+                handleBookingClose={handleBookingClose}
+                openBooking={openBooking}
+                service={service}
+                date={date}
+            ></BookingModal>
+        </>
     );
 };
 

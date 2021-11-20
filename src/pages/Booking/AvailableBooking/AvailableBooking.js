@@ -18,6 +18,7 @@ const AvailableBooking = ({ date }) => {
                     services.map(service => <SingleAvailableBooking
                         key={service._id}
                         service={service}
+                        date={date}
                     ></SingleAvailableBooking>)
                 }
             </Grid>
