@@ -4,9 +4,9 @@ import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Home from './pages/Home/Home/Home';
 import PrivateRoute from './pages/Login/Login/PrivateRoute/PrivateRoute';
-import Services from './pages/Home/Services/Services';
 import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
+import Booking from './pages/Booking/Booking/Booking';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <Route path='/home' element={<Home></Home>}>
               
             </Route>
-            <Route path='/services' element={<PrivateRoute><Services></Services></PrivateRoute>}>
+            <Route path='/booking' element={<PrivateRoute><Booking></Booking></PrivateRoute>}>
               
             </Route>
             <Route path='/login' element={<Login></Login>}>
