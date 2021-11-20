@@ -19,13 +19,13 @@ const style = {
     p: 4,
 };
 
-const BookingModal = ({ openBooking, handleBookingClose, service, date }) => {
+const BookingModal = ({ openBooking, handleBookingClose, service, date, setBookingSuccess }) => {
     const { serviceName, price } = service;
     const { user } = useAuth();
-    const initialInfo = {yourName:user.displayName, email:user.email, phone:''}
+    const initialInfo = { yourName: user.displayName, email: user.email, phone: '' }
     const [bookingInfo, setBookingInfo] = useState(initialInfo);
 
-    
+
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -50,16 +50,17 @@ const BookingModal = ({ openBooking, handleBookingClose, service, date }) => {
         fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
-                'content-type':'application/json'
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(booking)
+            body: JSON.stringify(booking)
         })
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                handleBookingClose();
-            }
-        })
+                    setBookingSuccess(true)
+                    handleBookingClose();
+                }
+            })
 
 
 
@@ -68,7 +69,7 @@ const BookingModal = ({ openBooking, handleBookingClose, service, date }) => {
         handleBookingClose();
         e.preventDefault();
     }
-    
+
     return (
         <Modal
             aria-labelledby="transition-modal-title"
@@ -89,14 +90,14 @@ const BookingModal = ({ openBooking, handleBookingClose, service, date }) => {
                     <form onSubmit={handleBookingSubmit}>
                         <TextField
                             disabled
-                            sx={{width:'95%',m:1}}
+                            sx={{ width: '95%', m: 1 }}
                             id="filled-size-small"
                             label="Selected Price"
                             defaultValue={price}
                             size="small"
                         />
                         <TextField
-                            sx={{width:'95%',m:1}}
+                            sx={{ width: '95%', m: 1 }}
                             id="filled-size-small"
                             name="yourName"
                             onBlur={handleOnBlur}
@@ -105,7 +106,7 @@ const BookingModal = ({ openBooking, handleBookingClose, service, date }) => {
                             size="small"
                         />
                         <TextField
-                            sx={{width:'95%',m:1}}
+                            sx={{ width: '95%', m: 1 }}
                             id="filled-size-small"
                             name="email"
                             onBlur={handleOnBlur}
@@ -114,7 +115,7 @@ const BookingModal = ({ openBooking, handleBookingClose, service, date }) => {
                             size="small"
                         />
                         <TextField
-                            sx={{width:'95%',m:1}}
+                            sx={{ width: '95%', m: 1 }}
                             id="filled-size-small"
                             name="phone"
                             type="number"
@@ -124,13 +125,13 @@ const BookingModal = ({ openBooking, handleBookingClose, service, date }) => {
                         />
                         <TextField
                             disabled
-                            sx={{width:'95%',m:1}}
+                            sx={{ width: '95%', m: 1 }}
                             id="filled-size-small"
                             label="Selected Date"
                             defaultValue={date.toDateString()}
                             size="small"
                         />
-                        <Button style={{backgroundColor:'#CC2060', margin:'10px 120px'}} type="submit" variant="contained">Submit</Button>
+                        <Button style={{ backgroundColor: '#CC2060', margin: '10px 120px' }} type="submit" variant="contained">Submit</Button>
                     </form>
                 </Box>
             </Fade>

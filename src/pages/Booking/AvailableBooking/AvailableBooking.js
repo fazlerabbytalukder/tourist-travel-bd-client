@@ -1,9 +1,10 @@
-import { Container, Grid } from '@mui/material';
+import { Alert, Container, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import SingleAvailableBooking from '../SingleAvailableBooking/SingleAvailableBooking';
 
 const AvailableBooking = ({ date }) => {
     const [services, setServices] = useState([]);
+    const [bookingSuccess, setBookingSuccess] = useState(false);
 
     useEffect(() => {
         fetch('http://localhost:5000/services')
@@ -12,13 +13,15 @@ const AvailableBooking = ({ date }) => {
     }, [])
     return (
         <Container>
-            <h2 style={{margin:'30px 0', color:'#CC2060'}}> <span style={{color:'black'}}>Available booking on</span> {date.toDateString()}</h2>
+            <h2 style={{ margin: '30px 0', color: '#CC2060' }}> <span style={{ color: 'black' }}>Available booking on</span> {date.toDateString()}</h2>
+            {setBookingSuccess && <Alert severity="success">booking success</Alert>}
             <Grid container spacing={2}>
                 {
                     services.map(service => <SingleAvailableBooking
                         key={service._id}
                         service={service}
                         date={date}
+                        setBookingSuccess={setBookingSuccess}
                     ></SingleAvailableBooking>)
                 }
             </Grid>

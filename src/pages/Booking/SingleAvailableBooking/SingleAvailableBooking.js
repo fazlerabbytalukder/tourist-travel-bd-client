@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 import { Box } from '@mui/system';
 import BookingModal from '../BookingModal/BookingModal';
 
-const SingleAvailableBooking = ({ service, date }) => {
+const SingleAvailableBooking = ({ service, date, setBookingSuccess }) => {
     const { serviceName, img, price, firstTrip, lastTrip, tripNumber, star } = service;
     const [openBooking, setBookingOpen] = React.useState(false);
     const handleBookingOpen = () => setBookingOpen(true);
@@ -49,6 +49,7 @@ const SingleAvailableBooking = ({ service, date }) => {
                 openBooking={openBooking}
                 service={service}
                 date={date}
+                setBookingSuccess={setBookingSuccess}
             ></BookingModal>
         </>
     );
