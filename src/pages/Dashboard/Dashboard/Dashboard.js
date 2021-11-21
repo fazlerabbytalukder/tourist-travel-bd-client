@@ -8,18 +8,18 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Button, Grid } from '@mui/material';
-import Calender from '../../Shared/Calender/Calender';
-import Bookings from '../Bookings/Bookings';
+import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import {
+    Outlet
+} from "react-router-dom";
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const [date, setDate] = React.useState(new Date());
-
+    
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -29,6 +29,8 @@ function Dashboard(props) {
             <Toolbar />
             <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/home'><Button color="inherit">GO To Home</Button></Link> <br/>
             <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/booking'><Button color="inherit">Booking</Button></Link>
+            <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/dashboard'><Button color="inherit">Dashboard</Button></Link>
+            <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/dashboard/makeAdmin'><Button color="inherit">Make Admin</Button></Link>
         </div>
     );
 
@@ -97,18 +99,7 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                
-
-
-
-
-
-
-
-
-
-
-                
+                <Outlet></Outlet>
             </Box>
         </Box>
     );
