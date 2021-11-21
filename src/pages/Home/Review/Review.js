@@ -9,11 +9,11 @@ const Review = (props) => {
     return (
         <Grid item xs={4} sm={4} md={4}>
             <Card sx={{ minWidth: 275, height: '150px', border: 0, boxShadow: 2 }}>
-                <Box style={{display:'flex', justifyContent:'spaceBetween', alignItems:'center'}}>
-                    <Box style={{textAlign: 'left', marginTop: '10px', marginBottom: '10px' }}>
+                <Box style={{ display: 'flex', justifyContent: 'spaceBetween', alignItems: 'center' }}>
+                    <Box style={{ textAlign: 'left', marginTop: '10px', marginBottom: '10px' }}>
                         <CardMedia
                             component="img"
-                            style={{ width: '50px', borderRadius: '50%', marginLeft:'10px' }}
+                            style={{ width: '50px', borderRadius: '50%', marginLeft: '10px' }}
                             image={img}
                             alt="your img"
                         />
@@ -32,8 +32,8 @@ const Review = (props) => {
                             </Typography>
                         </CardContent>
                         <Stack spacing={1}>
-      <Rating name="size-small" defaultValue={parseFloat(star)} size="small" />
-    </Stack>
+                            <Rating name="size-small" defaultValue={parseFloat(star)} size="small" />
+                        </Stack>
                         {/* <StarRatings
                             rating={parseFloat(star)}
                             starDimension="15px"
