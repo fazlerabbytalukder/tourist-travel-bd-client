@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import DashboardHome from './pages/Dashboard/DashboardHome/DashboardHome';
 import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
 import AdminRoute from './pages/Login/Login/AdminRoute/AdminRoute';
+import ManageAllBookings from './pages/Dashboard/ManageAllBookings/ManageAllBookings';
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
               <Route path="/dashboard" element={<DashboardHome></DashboardHome>}>
               </Route>
               <Route path="/dashboard/makeAdmin" element={<AdminRoute><MakeAdmin></MakeAdmin></AdminRoute>}>
+              </Route>
+              <Route path="/dashboard/manageAllBooking" element={<AdminRoute><ManageAllBookings></ManageAllBookings></AdminRoute>}>
               </Route>
 
 
