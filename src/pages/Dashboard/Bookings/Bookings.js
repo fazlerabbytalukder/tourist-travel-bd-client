@@ -22,6 +22,7 @@ const Bookings = ({date}) => {
                             <TableCell>Name</TableCell>
                             <TableCell align="right">Service Name</TableCell>
                             <TableCell align="right">Price</TableCell>
+                            <TableCell align="right">Status</TableCell>
                             <TableCell align="right">Action</TableCell>
                         </TableRow>
                     </TableHead>
@@ -36,6 +37,7 @@ const Bookings = ({date}) => {
                                 </TableCell>
                                 <TableCell align="right">{row.serviceName}</TableCell>
                                 <TableCell align="right">{row.price}</TableCell>
+                                <TableCell align="right">{row.status}</TableCell>
                                 <TableCell align="right">
                                     {/* <Link to={`/dashboard/payment/${row._id}`}><button>Pay</button></Link> */}
                                     pay

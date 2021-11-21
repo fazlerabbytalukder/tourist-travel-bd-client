@@ -43,6 +43,7 @@ const BookingModal = ({ openBooking, handleBookingClose, service, date, setBooki
             ...bookingInfo,
             price,
             serviceName: serviceName,
+            status:'pending',
             date: date.toLocaleDateString()
         }
         // console.log(booking);
