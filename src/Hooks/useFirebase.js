@@ -8,6 +8,7 @@ initilizeFirebase();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [isAdminLoading, setIsAdminLoading] = useState(true);
     const [authError, setAuthError] = useState('');
     const auth = getAuth();
 
@@ -118,10 +119,12 @@ const useFirebase = () => {
 
     //admin or non admin related work
     useEffect(() => {
+        setIsAdminLoading(true);
         fetch(`http://localhost:5000/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin);
+                setIsAdminLoading(false);
             });
     },[user.email])
 
@@ -131,6 +134,7 @@ const useFirebase = () => {
         user,
         admin,
         isLoading,
+        isAdminLoading,
         authError,
         loginUser,
         registerUser,

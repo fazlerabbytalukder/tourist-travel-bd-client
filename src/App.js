@@ -10,6 +10,7 @@ import Booking from './pages/Booking/Booking/Booking';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import DashboardHome from './pages/Dashboard/DashboardHome/DashboardHome';
 import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
+import AdminRoute from './pages/Login/Login/AdminRoute/AdminRoute';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
 
               <Route path="/dashboard" element={<DashboardHome></DashboardHome>}>
               </Route>
-              <Route path="/dashboard/makeAdmin" element={<MakeAdmin></MakeAdmin>}>
+              <Route path="/dashboard/makeAdmin" element={<AdminRoute><MakeAdmin></MakeAdmin></AdminRoute>}>
               </Route>
 
 
