@@ -7,6 +7,7 @@ import PrivateRoute from './pages/Login/Login/PrivateRoute/PrivateRoute';
 import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
 import Booking from './pages/Booking/Booking/Booking';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
               
             </Route>
             <Route path='/booking' element={<PrivateRoute><Booking></Booking></PrivateRoute>}>
+              
+            </Route>
+            <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}>
               
             </Route>
             <Route path='/login' element={<Login></Login>}>

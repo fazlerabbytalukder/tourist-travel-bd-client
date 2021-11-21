@@ -43,13 +43,13 @@ const Navigation = () => {
                             <li className="nav-item">
                                 <Link style={{ ...buttonDesign4 }} to='/booking'><Button color="inherit">Booking</Button></Link>
                             </li>
-                            {/* <li className="nav-item">
-                                <Link style={{ ...buttonDesign4 }} to='/dashboard'><Button color="inherit">Dashboard</Button></Link>
-                            </li> */}
                             {
                                 user?.email ? <>
+                                    <li className="nav-item">
+                                        <Link style={{ ...buttonDesign4 }} to='/dashboard'><Button color="inherit">Dashboard</Button></Link>
+                                    </li>
                                     <Button style={{ color: '#CC2060', marginRight: '7px', ...buttonDesign3 }}>{user?.displayName}</Button>
-                                    <Button style={{ ...buttonDesign2, color:'white' }} onClick={logout} color="inherit">Logout</Button>
+                                    <Button style={{ ...buttonDesign2, color: 'white' }} onClick={logout} color="inherit">Logout</Button>
                                 </>
                                     :
                                     <NavLink style={{ textDecoration: "none", color: 'white', ...buttonDesign }} to='/login'><Button color="inherit">Login</Button></NavLink>

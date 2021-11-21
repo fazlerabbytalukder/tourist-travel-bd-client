@@ -13,7 +13,7 @@ const AvailableBooking = ({ date }) => {
     }, [])
     return (
         <Container>
-            <h2 style={{ margin: '30px 0', color: '#CC2060' }}> <span style={{ color: 'black' }}>Available booking on</span> {date.toDateString()}</h2>
+            <h2 style={{ margin: '30px 0', color: '#CC2060' }}> <span style={{ color: 'black' }}>Available booking Dhaka to Cox's bazar on <br/></span> {date.toDateString()}</h2>
             {setBookingSuccess && <Alert severity="success">booking success</Alert>}
             <Grid container spacing={2}>
                 {
