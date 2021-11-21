@@ -31,8 +31,8 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/home'><Button color="inherit">GO To Home</Button></Link> <br/>
-            <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/booking'><Button color="inherit">Booking</Button></Link>
-            <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/dashboard'><Button color="inherit">Dashboard</Button></Link>
+            <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/booking'><Button color="inherit">Booking</Button></Link><br/>
+            <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/dashboard'><Button color="inherit">Dashboard</Button></Link><br/>
             {admin && <Box>
                 <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/dashboard/makeAdmin'><Button color="inherit">Make Admin</Button></Link>
                 <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/dashboard/manageAllBooking'><Button color="inherit">Manage All Booking</Button></Link>
