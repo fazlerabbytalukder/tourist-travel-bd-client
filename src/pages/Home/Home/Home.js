@@ -5,6 +5,7 @@ import BookingProcess from '../BookingProcess/BookingProcess';
 import Footer from '../Footer/Footer';
 import OurPartners from '../OurPartners/OurPartners';
 import OurServices from '../OurServices/OurServices';
+import Reviews from '../Reviews/Reviews';
 import Testimonials from '../Testimonials/Testimonials';
 
 
@@ -16,6 +17,7 @@ const Home = () => {
             <OurServices></OurServices>
             <BookingProcess></BookingProcess>
             <Testimonials></Testimonials>
+            <Reviews></Reviews>
             <OurPartners></OurPartners>
             <Footer></Footer>
         </div>
