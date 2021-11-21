@@ -97,18 +97,18 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                <Grid container spacing={2}>
-                    <Grid item xs={12} md={5}>
-                        <Calender
-                            date={date}
-                            setDate={setDate}
-                        
-                        ></Calender>
-                    </Grid>
-                    <Grid item xs={12} md={7}>
-                        <Bookings date={date}></Bookings>
-                    </Grid>
-                </Grid>
+                
+
+
+
+
+
+
+
+
+
+
+                
             </Box>
         </Box>
     );
