@@ -11,6 +11,9 @@ const useFirebase = () => {
     const [authError, setAuthError] = useState('');
     const auth = getAuth();
 
+    //admin or non admin related work
+    const [admin, setAdmin] = useState(false);
+
     //sign in with google
     const googleProvider = new GoogleAuthProvider();
 
@@ -113,10 +116,20 @@ const useFirebase = () => {
         .then()
     }
 
+    //admin or non admin related work
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setAdmin(data.admin);
+            });
+    },[user.email])
+
 
     //return method all
     return {
         user,
+        admin,
         isLoading,
         authError,
         loginUser,

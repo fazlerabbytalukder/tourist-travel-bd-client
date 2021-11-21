@@ -13,12 +13,15 @@ import { Link } from 'react-router-dom';
 import {
     Outlet
 } from "react-router-dom";
+import useAuth from '../../../Hooks/useAuth';
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    const { admin } = useAuth();
     
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -30,7 +33,9 @@ function Dashboard(props) {
             <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/home'><Button color="inherit">GO To Home</Button></Link> <br/>
             <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/booking'><Button color="inherit">Booking</Button></Link>
             <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/dashboard'><Button color="inherit">Dashboard</Button></Link>
-            <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/dashboard/makeAdmin'><Button color="inherit">Make Admin</Button></Link>
+            {admin && <Box>
+                <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/dashboard/makeAdmin'><Button color="inherit">Make Admin</Button></Link>
+            </Box>}
         </div>
     );
 
