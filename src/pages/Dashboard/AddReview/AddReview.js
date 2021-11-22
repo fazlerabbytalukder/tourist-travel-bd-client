@@ -4,7 +4,7 @@ import useAuth from '../../../Hooks/useAuth';
 
 
 const buttonDesign2 = {
-    backgroundColor: '#F63E7B',
+    backgroundColor: '#CC2060',
     padding: '5px 10px',
     borderRadius:'3px'
 }
@@ -52,7 +52,7 @@ const AddReview = () => {
     }
     return (
         <>
-            <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, textAlign:'left', color:"#8A5143" }}>Please Gave Us Your Valuable Review</Typography>
+            <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, textAlign:'left', color:"#CC2060" }}>Please Gave Us Your Valuable Review</Typography>
             <form onSubmit={handleReiewSubmit} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'left' }}>
                 <TextField
                     id="outlined-basic"
@@ -78,7 +78,7 @@ const AddReview = () => {
                     sx={{ width: "50%", backgroundColor: "white", mb: 1 }} />
                 
                 {success && <Alert severity="success">Service Added Successfully</Alert>}
-                <Button type="submit" style={{width:'50%',...buttonDesign2, color:'white', backgroundColor:'#8A5143'}}>Submit</Button>
+                <Button type="submit" style={{width:'50%',...buttonDesign2, color:'white', backgroundColor:'#CC2060'}}>Submit</Button>
             </form>
         </>
     );

@@ -18,7 +18,7 @@ const Review = (props) => {
                             alt="your img"
                         />
                         <Box sx={{ ml: 2 }}>
-                            <Typography variant="body2" sx={{ fontSize: 14, color: '#8A513D', fontWeight: 400 }} >
+                            <Typography variant="body2" sx={{ fontSize: 14, color: '#CC2060', fontWeight: 400 }} >
                                 {name}
                             </Typography>
                         </Box>
@@ -26,19 +26,14 @@ const Review = (props) => {
                     <Box>
                         <CardContent>
                             <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'justify' }}>
-                                <i style={{ color: '#8A513D', margin: '5px' }} class="fas fa-quote-left fa-1x"></i>
+                                <i style={{ color: '#CC2060', margin: '5px' }} class="fas fa-quote-left fa-1x"></i>
                                 {review}
-                                <i style={{ color: '#8A513D', margin: '5px' }} class="fas fa-quote-right fa-1x"></i>
+                                <i style={{ color: '#CC2060', margin: '5px' }} class="fas fa-quote-right fa-1x"></i>
                             </Typography>
                         </CardContent>
                         <Stack spacing={1}>
-                            <Rating name="size-small" defaultValue={parseFloat(star)} size="small" />
+                            <Rating style={{margin:'0 auto'}} name="size-small" defaultValue={parseFloat(star)} size="small" />
                         </Stack>
-                        {/* <StarRatings
-                            rating={parseFloat(star)}
-                            starDimension="15px"
-                            starSpacing="10px"
-                        /> */}
                     </Box>
                 </Box>
             </Card>

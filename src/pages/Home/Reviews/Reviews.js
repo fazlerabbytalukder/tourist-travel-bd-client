@@ -32,7 +32,7 @@ const Reviews = () => {
     return (
         <Container>
             <Box>
-            <Typography style={{ fontWeight: '700', size: '35px', margin: '25px 0',color: '#8A513D' }} variant="h4" gutterBottom component="div">
+            <Typography style={{ fontWeight: '700', size: '35px', margin: '25px 0',color: '#CC2060' }} variant="h4" gutterBottom component="div">
                 Happy Customer Review
             </Typography>
             </Box>
@@ -46,7 +46,7 @@ const Reviews = () => {
                     }
                 </Grid>
             </Box>
-            <Button onClick={loadMore} variant="contained" style={{backgroundColor:'#8A513D', marginBottom:"40px"}} >{seeAll === false ? "See All Review" : "See Less"}</Button>
+            <Button onClick={loadMore} variant="contained" style={{backgroundColor:'#CC2060', marginBottom:"40px"}} >{seeAll === false ? "See All Review" : "See Less"}</Button>
         </Container>
     );
 };
