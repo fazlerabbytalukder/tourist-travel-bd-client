@@ -15,14 +15,20 @@ import {
 } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
 
+const buttonDesign = {
+    color: '#CC2060',
+    padding: '5px 10px',
+    textDecoration: 'none'
+}
+
 const drawerWidth = 200;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    const { admin } = useAuth();
-    
+    const { admin, logout } = useAuth();
+
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -30,14 +36,22 @@ function Dashboard(props) {
     const drawer = (
         <div>
             <Toolbar />
-            <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign: "left" }} to='/dashboard'><Button color="inherit">Dashboard</Button></Link><br />
-            <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/booking'><Button color="inherit">Booking</Button></Link><br/>
-            <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/dashboard/reviews'><Button color="inherit">Add Review</Button></Link><br/>
+
+            {admin ? <Box>
+                <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign: "left" }} to='/dashboard/makeAdmin'><Button color="inherit">Make Admin</Button></Link>
+                <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign: "left" }} to='/dashboard/manageAllBooking'><Button color="inherit">Manage All Booking</Button></Link>
+            </Box>
+                :
+                <Box>
+                    <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign: "left" }} to='/dashboard'><Button color="inherit">Dashboard</Button></Link><br />
+                    <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign: "left" }} to='/booking'><Button color="inherit">Booking</Button></Link><br />
+                    <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign: "left" }} to='/dashboard/reviews'><Button color="inherit">Add Review</Button></Link><br />
+                    
+                </Box>
+
+            }
             <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign: "left" }} to='/home'><Button color="inherit">GO To Home</Button></Link> <br />
-            {admin && <Box>
-                <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/dashboard/makeAdmin'><Button color="inherit">Make Admin</Button></Link>
-                <Link style={{ textDecoration: 'none', color: '#CC2060', textAlign:"left"}} to='/dashboard/manageAllBooking'><Button color="inherit">Manage All Booking</Button></Link>
-            </Box>}
+            <Button style={{ ...buttonDesign }} onClick={logout} color="inherit">Logout</Button>
         </div>
     );
 
