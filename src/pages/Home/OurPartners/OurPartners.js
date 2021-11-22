@@ -1,5 +1,4 @@
 import { Container, Grid, Typography } from '@mui/material';
-import { Box } from '@mui/system';
 import React from 'react';
 import logo1 from '../../../images/logo1.jpg';
 import logo2 from '../../../images/logo2.jpg';

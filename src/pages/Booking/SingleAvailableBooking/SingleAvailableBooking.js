@@ -2,7 +2,6 @@ import { Button, Card, CardContent, CardMedia, Divider, Grid, Typography } from 
 import React from 'react';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
-import { Box } from '@mui/system';
 import BookingModal from '../BookingModal/BookingModal';
 
 const SingleAvailableBooking = ({ service, date, setBookingSuccess }) => {
